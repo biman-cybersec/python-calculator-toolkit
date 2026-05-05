@@ -9,8 +9,8 @@ import math
 
 # THIS FUNCTION KEY WILL DO THE OPERACTIONS REGARDING ADDITION.
 def add():
-    print("1.INTEGER\n2.FLOAT\n3.MIXED")
-    ch=int(input("Enter your choice [1,2,3]:"))
+    print("1.INTEGER\n2.FLOAT OR MIXED")
+    ch=int(input("Enter your choice [1,2]:"))
     
     # THE FIRST CHOICE IS INTEGER TYPE ADDITION.
     if ch==1:
@@ -35,18 +35,6 @@ def add():
         for num in lst:
             sum= sum + num 
         print("Addition result=",sum)
-
-    # THE THIRD CHOICE WILL ACCEPT BOTH TYPES AND DO ADDITION.   
-    elif ch==3:
-        sum=0
-        lst=[]
-        n=int(input("enter total numbers to be added:"))
-        for i in range(n):
-            a= eval(input("Enter number:"))
-            k= lst.append(a)
-        for num in lst:
-            sum= sum + num 
-        print("Addition result=",sum)
         
     else:
         print("Your input choice is invalid.\nPlease try again.")
@@ -54,8 +42,8 @@ def add():
 
 # THIS FUNCTION KEY WILL DO THE OPERATIONS REGARDING SUBTRACTION.        
 def subtract():
-    print("1.INTEGER\n2.FLOAT\n3.MIXED")
-    ch=int(input("Enter your choice [1,2,3]:"))
+    print("1.INTEGER\n2.FLOAT OR MIXED")
+    ch=int(input("Enter your choice [1,2]:"))
 
     # HERE IS THE SUBTRACTION OF INTEGER TYPE NUMBERS.
     if ch==1:
@@ -70,13 +58,6 @@ def subtract():
         b=float(input("Enter 2nd decimal number:"))
         diff=b-a
         print("Subtraction result=",diff)
-
-    # SUPPOSE YOU WANT TO DO BOTH INTEGER AND DECIMAL NUMBERS SUBTRACTION, U CAN DO HERE.        
-    elif ch==3:
-        a=eval(input("Enter 1st number:"))
-        b=eval(input("Enter 2nd number:"))
-        diff=b-a
-        print("Subtraction result=",diff)
             
     else:
         print("Your input choice is invalid.\nPlease try again.")
@@ -89,8 +70,8 @@ def multiply():
 # SECOND ONE FLOAT OR DECIMAL TYPE
 # AND THIRD ONE IS BOTH INTEGER AND FLOAT TYPE OPERATION.
 
-    print("1.INTEGER\n2.FLOAT\n3.MIXED")
-    ch=int(input("Enter your choice [1,2,3]:"))
+    print("1.INTEGER\n2.FLOAT OR MIXED")
+    ch=int(input("Enter your choice [1,2]:"))
 
     if ch==1:
         a=int(input("Enter 1st number:"))
@@ -101,12 +82,6 @@ def multiply():
     elif ch==2:
         a=float(input("Enter 1st decimal number:"))
         b=float(input("Enter 2nd decimal number:"))
-        mul=a*b
-        print("Multiplication result=",mul)
-        
-    elif ch==3:
-        a=eval(input("Enter 1st number:"))
-        b=eval(input("Enter 2nd number:"))
         mul=a*b
         print("Multiplication result=",mul)
         
@@ -121,8 +96,8 @@ def multiply():
 
 # THIS FUNCTION KEY WILL DO THE OPERATIONS REGARDING DIVISION.
 def divide():
-    print("1.INTEGER\n2.FLOAT\n3.MIXED")
-    ch=int(input("Enter your choice [1,2,3]:"))
+    print("1.INTEGER\n2.FLOAT OR MIXED")
+    ch=int(input("Enter your choice [1,2]:"))
     
     if ch==1:
         a=int(input("Enter 1st number:"))
@@ -136,12 +111,6 @@ def divide():
         div=a/b
         print("Division result=",div)
             
-    elif ch==3:
-        a=eval(input("Enter 1st number:"))
-        b=eval(input("Enter 2nd number:"))
-        div=a/b
-        print("Division result=",div)
-            
     else:
         print("Your input choice is invalid.\nPlease try again.")
 
@@ -149,13 +118,13 @@ def divide():
 
 # THIS FUNCTION KEY WILL DO THE OPERATIONS RELATED TO FINDING AVERAGE OF NUMBERS GIVEN AS INPUT BY THE USER.
 def average():
-    print("1.INTEGER\n2.FLOAT\n3.MIXED")
-    ch=int(input("Enter your choice [1,2,3]:"))
+    print("1.INTEGER\n2.FLOAT OR MIXED")
+    ch=int(input("Enter your choice [1,2]:"))
     
     if ch==1:
         count=0
         n=int(input("Enter the no.of entries you want to calculate:"))
-        for i in n:
+        for i in range(n):
             entries=int(input("Enter the number:"))
             count+=entries
             avrg=count/n
@@ -164,17 +133,8 @@ def average():
     elif ch==2:
         count=0
         n=int(input("Enter the no.of entries you want to calculate:"))
-        for i in n:
+        for i in range(n):
             entries=float(input("Enter the number:"))
-            count+=entries
-            avrg=count/n
-            print("Average result=",avrg)
-        
-    elif ch==3:
-        count=0
-        n=int(input("Enter the no.of entries you want to calculate:"))
-        for i in n:
-            entries=eval(input("Enter the number:"))
             count+=entries
             avrg=count/n
             print("Average result=",avrg)
@@ -192,14 +152,12 @@ def percentage():
 # JUST PUT THE ENTRIES AND GET THE PERCENTAGE OF THE ENTRIES.
     sum=0
     n=int(input("Enter the no.of entries:"))
-    for i in n:
-        entries=eval(input("Enter the number:"))
+    for i in range(n):
+        entries=float(input("Enter the number:"))
         sum+=entries
         total=int(input("Enter total entity:"))
         perc=float((sum/total)*100)
         print("Percentage result=",perc,"%")
-
-
 
 # THIS FUNCTION KEY WILL DO THE OPERATIONS RELATED TO FINDING FACTORIAL OF A NUMBER.
 def factorial():
@@ -236,50 +194,50 @@ def area():
     ch=int(input("Enter choice[1,2,..,8]:"))
     
     if ch==1:
-        side=eval(input("Enter side length:"))
+        side=float(input("Enter side length:"))
         ar=float(side*side)
         print("SQUARE Area result=",ar,"sq.units")
         
     elif ch==2:
-        length=eval(input("Enter length of rectangle:"))
-        width=eval(input("Enter width of rectangle:"))
+        length=float(input("Enter length of rectangle:"))
+        width=float(input("Enter width of rectangle:"))
         ar=float(length*width)
         print("RECTANGLE Area result=",ar,"sq.units")
         
     elif ch==3:
-        diameter=eval(input("Enter diameter length:"))
+        diameter=float(input("Enter diameter length:"))
         radius=float(diameter/2)
         ar=float(3.14*radius*radius)
         print("CIRCLE Area result=",ar,"sq.units")
         
     elif ch==4:
-        base=eval(input("Enter base length:"))
-        height=eval(input("Enter height length:"))
-        ar=float([base*height]*1/2)
+        base=float(input("Enter base length:"))
+        height=float(input("Enter height length:"))
+        ar = (base * height) / 2
         print("TRIANGLE Area result=",ar,"sq.units")
         
     elif ch==5:
-        base=eval(input("Enter base length:"))
-        height=eval(input("Enter height length:"))
+        base=float(input("Enter base length:"))
+        height=float(input("Enter height length:"))
         ar=float(base*height)
         print("PARALLELOGRAM Area result=",ar,"sq.units")
         
     elif ch==6:
-        d1=eval(input("Enter 1st diagonal length:"))
-        d2=eval(input("Enter 2nd diagonal length:"))
-        ar=float([d1*d2]*1/2)
+        d1=float(input("Enter 1st diagonal length:"))
+        d2=float(input("Enter 2nd diagonal length:"))
+        ar = (d1 * d2) / 2
         print("RHOMBUS Area result=",ar,"sq.units")
         
     elif ch==7:
-        a=eval(input("Enter side1 length:"))
-        b=eval(input("Enter side2 length:"))
+        a=float(input("Enter side1 length:"))
+        b=float(input("Enter side2 length:"))
     # a and b are the parallel sides of the trapezium.
-        height=eval(input("Enter height length:"))
-        ar=float(height*[a+b]*1/2)
+        height=float(input("Enter height length:"))
+        ar = height * (a + b) / 2
         print("TRAPEZIUM Area result=",ar,"sq.units")
         
     elif ch==8:
-        b=eval(input("Enter length of semi minor axis:"))
+        b=float(input("Enter length of semi minor axis:"))
         ar=float(3.14*b)
         print("ELLIPSE Area result=",ar,"sq.units")
     
@@ -296,51 +254,51 @@ def perimeter():
     ch=int(input("Enter choice[1,2,..,8]:"))
     
     if ch==1:
-        side=eval(input("Enter side length:"))
+        side=float(input("Enter side length:"))
         peri=float(4*side)
         print("SQUARE Perimeter result=",peri,"units")
         
     elif ch==2:
-        length=eval(input("Enter length of rectangle:"))
-        width=eval(input("Enter width of rectangle:"))
-        peri=float(2*[length+width])
+        length=float(input("Enter length of rectangle:"))
+        width=float(input("Enter width of rectangle:"))
+        peri=float(2*(length+width))
         print("RECTANGLE Perimeter result=",peri,"units")
         
     elif ch==3:
-        diameter=eval(input("Enter diameter length:"))
+        diameter=float(input("Enter diameter length:"))
         radius=float(diameter/2)
         peri=float(2*3.14*radius)
         print("CIRCLE Perimeter result=",peri,"units")
         
     elif ch==4:
-        a=eval(input("Enter side1 length:"))
-        b=eval(input("Enter side2 length:"))
-        c=eval(input("Enter side3 length:"))
+        a=float(input("Enter side1 length:"))
+        b=float(input("Enter side2 length:"))
+        c=float(input("Enter side3 length:"))
         peri=float(a+b+c)
         print("TRIANGLE Perimeter result=",peri,"units")
         
     elif ch==5:
-        a=eval(input("Enter opposite side1 length:"))
-        b=eval(input("Enter opposite side2 length:"))
-        peri=float(2*[a+b])
+        a=float(input("Enter opposite side1 length:"))
+        b=float(input("Enter opposite side2 length:"))
+        peri=float(2*(a+b))
         print("PARALLELOGRAM Perimeter result=",peri,"units")
         
     elif ch==6:
-        a=eval(input("Enter side of rhombus length:"))
+        a=float(input("Enter side of rhombus length:"))
         peri=float(4*a)
         print("RHOMBUS Perimeter result=",peri,"units")
         
     elif ch==7:
-        a=eval(input("Enter side1 length:"))
-        b=eval(input("Enter side2 length:"))
-        c=eval(input("Enter side3 length:"))
-        d=eval(input("Enter side4 length:"))
+        a=float(input("Enter side1 length:"))
+        b=float(input("Enter side2 length:"))
+        c=float(input("Enter side3 length:"))
+        d=float(input("Enter side4 length:"))
         peri=float(a+b+c+d)
         print("TRAPEZIUM Perimeter result=",peri,"units")
         
     elif ch==8:
-        a=eval(input("Enter length of semi major axis:"))
-        b=eval(input("Enter length of semi minor axis:"))
+        a=float(input("Enter length of semi major axis:"))
+        b=float(input("Enter length of semi minor axis:"))
         peri=float(3.14*(a+b))
         print("ELLIPSE Perimeter result=",peri,"units")
     
@@ -359,41 +317,41 @@ def volume():
     ch=int(input("Enter choice[1,2,..,8]:"))
     
     if ch==1:
-        side=eval(input("Enter side length:"))
+        side=float(input("Enter side length:"))
         vol=float(side*side*side)
         print("CUBE Volume result=",vol,"cu.units")
         
     elif ch==2:
-        length=eval(input("Enter length of cuboid:"))
-        width=eval(input("Enter width of cuboid:"))
-        height=eval(input("Enter height of cuboid:"))
+        length=float(input("Enter length of cuboid:"))
+        width=float(input("Enter width of cuboid:"))
+        height=float(input("Enter height of cuboid:"))
         vol=float(length*width*height)
         print("CUBOID Volume result=",vol,"cu.units")
         
     elif ch==3:
-        diameter=eval(input("Enter diameter length:"))
+        diameter=float(input("Enter diameter length:"))
         radius=float(diameter/2)
-        height=eval(input("Enter height length:"))
-        vol=float([3.14*radius*radius*height]*1/3)
+        height=float(input("Enter height length:"))
+        vol=float((3.14*radius*radius*height)*1/3)
         print("CONE Volume result=",vol,"cu.units")
         
     elif ch==4:
-        diameter=eval(input("Enter diameter length:"))
+        diameter=float(input("Enter diameter length:"))
         radius=float(diameter/2)
-        height=eval(input("Enter height length:"))
+        height=float(input("Enter height length:"))
         vol=float(3.14*radius*radius*height)
         print("CYLINDER Volume result=",vol,"cu.units")
         
     elif ch==5:
-        diameter=eval(input("Enter diameter length:"))
+        diameter=float(input("Enter diameter length:"))
         radius=float(diameter/2)
-        vol=float(4/3*[3.14*radius*radius*radius])
+        vol=float(4/3*(3.14*radius*radius*radius))
         print("SPHERE Volume result=",vol,"cu.units")
         
     elif ch==6:
-        diameter=eval(input("Enter diameter length:"))
+        diameter=float(input("Enter diameter length:"))
         radius=float(diameter/2)
-        vol=float([3.14*radius*radius*radius]*2/3)
+        vol=float((3.14*radius*radius*radius)*2/3)
         print("HEMISPHERE Volume result=",vol,"cu.units")
         
     elif ch==7:
@@ -402,26 +360,26 @@ def volume():
         ch=input("Enter choice[a,b,c,d]:")
         
         if ch=="a":
-            side=eval(input("Enter side length:"))
+            side=float(input("Enter side length:"))
             base_ar=float(side*side)
-            height=eval(input("Enter height of pyramid:"))
-            vol=float((1/3)*base_ar*height)
+            height=float(input("Enter height of pyramid:"))
+            vol=float((base_ar*height)/3)
             print("SQUARE PYRAMID VOLUME result=",vol,"cu.units")
             
         elif ch=="b":
-            length=eval(input("Enter length of rectangle:"))
-            width=eval(input("Enter width of rectangle:"))
+            length=float(input("Enter length of rectangle:"))
+            width=float(input("Enter width of rectangle:"))
             base_ar=float(length*width)
-            height=eval(input("Enter height of pyramid:"))
-            vol=float((1/3)*base_ar*height)
+            height=float(input("Enter height of pyramid:"))
+            vol=float((base_ar*height)/3)
             print("RECTANGULAR PYRAMID VOLUME result=",vol,"cu.units")
             
         elif ch=="c":
-            base=eval(input("Enter base length:"))
-            ht=eval(input("Enter height length:"))
-            base_ar=float([base*ht]*1/2)
-            height=eval(input("Enter height of pyramid:"))
-            vol=float((1/3)*base_ar*height)
+            base=float(input("Enter base length:"))
+            ht=float(input("Enter height length:"))
+            base_ar=float((base*ht)/2)
+            height=float(input("Enter height of pyramid:"))
+            vol=float((base_ar*height)/3)
             print("TRIANGULAR PYRAMID VOLUME result=",vol,"cu.units")
             
         elif ch=="d":
@@ -429,17 +387,17 @@ def volume():
             print("1.GIVEN ONLY 'SIDE' LENGHT\n2.GIVEN BOTH 'SIDE' AND 'APOTHEM' LENGTHS")
             ch=int(input("Enter choice[1,2]:"))
             if ch==1:
-                side=eval(input("Enter side length:"))
-                base_ar=float((1/4)*{math.sqrt(5*[5+2*math.sqrt(5)])}*side*side)
-                height=eval(input("Enter height of pyramid:"))
-                vol=float((1/3)*base_ar*height)
+                side=float(input("Enter side length:"))
+                base_ar=float((1/4)*(math.sqrt(5*(5+2*math.sqrt(5))))*side*side)
+                height=float(input("Enter height of pyramid:"))
+                vol=float((base_ar*height)/3)
                 print("PENTAGONAL PYRAMID VOLUME result=",vol,"cu.units")
             elif ch==2:
-                side=eval(input("Enter length of side:"))
-                apothem=eval(input("Enter apothem length of pentagon:"))
-                base_ar=float((5/2)*side*apothem)
-                height=eval(input("Enter height of pyramid:"))
-                vol=float((1/3)*base_ar*height)
+                side=float(input("Enter length of side:"))
+                apothem=float(input("Enter apothem length of pentagon:"))
+                base_ar=float((5*side*apothem)/2)
+                height=float(input("Enter height of pyramid:"))
+                vol=float((base_ar*height)/3)
                 print("PENTAGONAL PYRAMID VOLUME result=",vol,"cu.units")
             else:
                 print("Your input choice is invalid.\nPlease try again.")
@@ -454,25 +412,25 @@ def volume():
         ch=input("Enter choice[a,b,c,d,e]:")
         
         if ch=="a":
-            side=eval(input("Enter side length:"))
+            side=float(input("Enter side length:"))
             base_ar=float(side*side)
-            height=eval(input("Enter height of prism:"))
+            height=float(input("Enter height of prism:"))
             vol=float(base_ar*height)
             print("SQUARE PRISM VOLUME result=",vol,"cu.units")
             
         elif ch=="b":
-            length=eval(input("Enter length of rectangle:"))
-            width=eval(input("Enter width of rectangle:"))
+            length=float(input("Enter length of rectangle:"))
+            width=float(input("Enter width of rectangle:"))
             base_ar=float(length*width)
-            height=eval(input("Enter height of prism:"))
+            height=float(input("Enter height of prism:"))
             vol=float(base_ar*height)
             print("RECTANGULAR PRISM VOLUME result=",vol,"cu.units")
             
         elif ch=="c":
-            base=eval(input("Enter base length:"))
-            ht=eval(input("Enter height length:"))
-            base_ar=float([base*ht]*1/2)
-            height=eval(input("Enter height of prism:"))
+            base=float(input("Enter base length:"))
+            ht=float(input("Enter height length:"))
+            base_ar=float((base*ht)/2)
+            height=float(input("Enter height of prism:"))
             vol=float(base_ar*height)
             print("TRIANGULAR PRISM VOLUME result=",vol,"cu.units")
             
@@ -481,16 +439,16 @@ def volume():
             print("1.GIVEN ONLY 'SIDE' LENGHT\n2.GIVEN BOTH 'SIDE' AND 'APOTHEM' LENGTHS")
             ch=int(input("Enter choice[1,2]:"))
             if ch==1:
-                side=eval(input("Enter side length:"))
-                base_ar=float((1/4)*{math.sqrt(5*[5+2*math.sqrt(5)])}*side*side)
-                height=eval(input("Enter height of prism:"))
+                side=float(input("Enter side length:"))
+                base_ar=float((1/4)*(math.sqrt(5*(5+2*math.sqrt(5))))*side*side)
+                height=float(input("Enter height of prism:"))
                 vol=float(base_ar*height)
                 print("PENTAGONAL PRISM VOLUME result=",vol,"cu.units")
             elif ch==2:
-                side=eval(input("Enter length of side:"))
-                apothem=eval(input("Enter apothem length of pentagon:"))
-                base_ar=float((5/2)*side*apothem)
-                height=eval(input("Enter height of prism:"))
+                side=float(input("Enter length of side:"))
+                apothem=float(input("Enter apothem length of pentagon:"))
+                base_ar=float((5*side*apothem)/2)
+                height=float(input("Enter height of prism:"))
                 vol=float(base_ar*height)
                 print("PENTAGONAL PRISM VOLUME result=",vol,"cu.units")
             else:
@@ -501,16 +459,16 @@ def volume():
             print("1.REGULAR HEXAGONAL PRISM\n2.GIVEN 'APOTHEM' LENGTH OF THE HEXAGONAL PRISM")
             ch=int(input("Enter choice[1,2]:"))
             if ch==1:
-                side=eval(input("Enter side length:"))
-                base_ar=float({3*(math.sqrt(3))*side*side}/2)
-                height=eval(input("Enter height of prism:"))
+                side=float(input("Enter side length:"))
+                base_ar=float((3*(math.sqrt(3))*side*side)/2)
+                height=float(input("Enter height of prism:"))
                 vol=float(base_ar*height)
                 print("HEXAGONAL PRISM VOLUME result=",vol,"cu.units")
             elif ch==2:
-                side=eval(input("Enter length of side:"))
-                apothem=eval(input("Enter apothem length of hexagon:"))
-                base_ar=float(apothem*6*side*(1/2))
-                height=eval(input("Enter height of prism:"))
+                side=float(input("Enter length of side:"))
+                apothem=float(input("Enter apothem length of hexagon:"))
+                base_ar=float((apothem*6*side)/2)
+                height=float(input("Enter height of prism:"))
                 vol=float(base_ar*height)
                 print("HEXAGONAL PRISM VOLUME result=",vol,"cu.units")
             else:
@@ -532,41 +490,41 @@ def lateral_surface_area():
     ch=int(input("Enter choice[1,2,..,8]:"))
     
     if ch==1:
-        side=eval(input("Enter side length of cube:"))
+        side=float(input("Enter side length of cube:"))
         l_sur_ar=float(4*side*side)
         print("CUBE LATERAL SURFACE AREA result=",l_sur_ar,"sq.units")
         
     elif ch==2:
-        length=eval(input("Enter length of cuboid:"))
-        width=eval(input("Enter width of cuboid:"))
-        height=eval(input("Enter height of cuboid:"))
+        length=float(input("Enter length of cuboid:"))
+        width=float(input("Enter width of cuboid:"))
+        height=float(input("Enter height of cuboid:"))
         l_sur_ar=float(2*(length+width)*height)
         print("CUBOID LATERAL SURFACE AREA result=",l_sur_ar,"sq.units")
         
     elif ch==3:
-        diameter=eval(input("Enter diameter length:"))
+        diameter=float(input("Enter diameter length:"))
         radius=float(diameter/2)
-        slant_height=eval(input("Enter slant height length:"))
+        slant_height=float(input("Enter slant height length:"))
         l_sur_ar=float(3.14*radius*slant_height)
         print("CONE LATERAL SURFACE AREA result=",l_sur_ar,"sq.units")
         
     elif ch==4:
-        diameter=eval(input("Enter diameter length:"))
+        diameter=float(input("Enter diameter length:"))
         radius=float(diameter/2)
-        height=eval(input("Enter height length:"))
+        height=float(input("Enter height length:"))
         l_sur_ar=float(2*3.14*radius*height)
         print("CYLINDER LATERAL SURFACE AREA result=",l_sur_ar,"sq.units")
         
     elif ch==5:
-        diameter=eval(input("Enter diameter length:"))
+        diameter=float(input("Enter diameter length:"))
         radius=float(diameter/2)
         l_sur_ar=float(4*3.14*radius*radius)
         print("SPHERE LATERAL SURFACE AREA result=",l_sur_ar,"sq.units")
         
     elif ch==6:
-        diameter=eval(input("Enter diameter length:"))
+        diameter=float(input("Enter diameter length:"))
         radius=float(diameter/2)
-        l_sur_ar=float([3.14*radius*radius*radius]*2/3)
+        l_sur_ar=float((3.14*radius*radius*radius*2)/3)
         print("HEMISPHERE LATERAL SURFACE AREA result=",l_sur_ar,"sq.units")
         
     elif ch==7:
@@ -575,42 +533,42 @@ def lateral_surface_area():
         ch=input("Enter choice[a,b,c,d,e]:")
         
         if ch=="a":
-            side=eval(input("Enter side length:"))
-            base=eval(input("Enter base length:"))
+            side=float(input("Enter side length:"))
+            base=float(input("Enter base length:"))
             l_sur_ar=float((2*base*side)+(base*base))
             print("SQUARE PYRAMID LATERAL SURFACE AREA result=",l_sur_ar,"sq.units")
             
         elif ch=="b":
-            length=eval(input("Enter length of base:"))
-            width=eval(input("Enter width of base:"))
-            height=eval(input("Enter height of pyramid:"))
-            l_sur_ar=float((length+width)*(math.sqrt([height*height]+[(length/2)*(length/2)]))+(length*width))
+            length=float(input("Enter length of base:"))
+            width=float(input("Enter width of base:"))
+            height=float(input("Enter height of pyramid:"))
+            l_sur_ar=float((length+width)*(math.sqrt((height*height)+((length/2)*(length/2))))+(length*width))
             print("RECTANGULAR PYRAMID LATERAL SURFACE AREA result=",l_sur_ar,"sq.units")
             
         elif ch=="c":
-            base=eval(input("Enter base length:"))
-            ht=eval(input("Enter height length:"))
-            base_ar=float([base*ht]*1/2)
-            a=eval(input("Enter side1 length:"))
-            b=eval(input("Enter side2 length:"))
-            c=eval(input("Enter side3 length:"))
+            base=float(input("Enter base length:"))
+            ht=float(input("Enter height length:"))
+            base_ar=float((base*ht)/2)
+            a=float(input("Enter side1 length:"))
+            b=float(input("Enter side2 length:"))
+            c=float(input("Enter side3 length:"))
             peri=float(a+b+c)
-            slant_length=eval(input("Enter slant_length of pyramid:"))
-            l_sur_ar=float(base_ar+{(1/2)*peri*slant_length})
+            slant_length=float(input("Enter slant_length of pyramid:"))
+            l_sur_ar=float(base_ar+((peri*slant_length)/2))
             print("TRIANGULAR PYRAMID LATERAL SURFACE AREA result=",l_sur_ar,"sq.units")
             
         elif ch=="d":
-            side=eval(input("Enter side length:"))
-            apothem=eval(input("Enter apothem length:"))
-            slant_height=eval(input("Enter slant height of pyramid:"))
-            l_sur_ar=float({(5/2)*(side*apothem)}+{(5/2)*(side*slant_height)})
+            side=float(input("Enter side length:"))
+            apothem=float(input("Enter apothem length:"))
+            slant_height=float(input("Enter slant height of pyramid:"))
+            l_sur_ar = 2.5 * side * (apothem + slant_height)
             print("PENTAGONAL PYRAMID LATERAL SURFACE AREA result=",l_sur_ar,"sq.units")
             
         elif ch=="e":
-            side=eval(input("Enter side length:"))
-            apothem=eval(input("Enter apothem length:"))
-            slant_height=eval(input("Enter slant height of pyramid:"))
-            l_sur_ar=float({3*(side*apothem)}+{3*(side*slant_height)})
+            side=float(input("Enter side length:"))
+            apothem=float(input("Enter apothem length:"))
+            slant_height=float(input("Enter slant height of pyramid:"))
+            l_sur_ar = 3 * side * (apothem + slant_height)
             print("HEXAGONAL PYRAMID LATERAL SURFACE AREA result=",l_sur_ar,"sq.units")
                         
         else:
@@ -622,37 +580,37 @@ def lateral_surface_area():
         ch=input("Enter choice[a,b,c,d,e]:")
         
         if ch=="a":
-            side=eval(input("Enter side length:"))
-            height=eval(input("Enter height of prism:"))
+            side=float(input("Enter side length:"))
+            height=float(input("Enter height of prism:"))
             l_sur_ar=float((4*side*height))
             print("SQUARE PRISM LATERAL SURFACE AREA result=",l_sur_ar,"sq.units")
             
         elif ch=="b":
-            length=eval(input("Enter length of rectangle:"))
-            width=eval(input("Enter width of rectangle:"))
-            height=eval(input("Enter height of prism:"))
+            length=float(input("Enter length of rectangle:"))
+            width=float(input("Enter width of rectangle:"))
+            height=float(input("Enter height of prism:"))
             l_sur_ar=float(2*height*(length+width))
             print("RECTANGULAR PRISM LATERAL SURFACE AREA result=",l_sur_ar,"sq.units")
             
         elif ch=="c":
-            a=eval(input("Enter side1 length:"))
-            b=eval(input("Enter side2 length:"))
-            c=eval(input("Enter side3 length:"))
+            a=float(input("Enter side1 length:"))
+            b=float(input("Enter side2 length:"))
+            c=float(input("Enter side3 length:"))
             peri=float(a+b+c)
-            height=eval(input("Enter height of prism:"))
+            height=float(input("Enter height of prism:"))
             l_sur_ar=float(peri*height)
             print("TRIANGULAR PRISM LATERAL SURFACE AREA result=",l_sur_ar,"sq.units")
             
         elif ch=="d":
-            apothem=eval(input("Enter apothem length:"))
-            base=eval(input("Enter base length:"))
-            height=eval(input("Enter height of prism:"))
+            apothem=float(input("Enter apothem length:"))
+            base=float(input("Enter base length:"))
+            height=float(input("Enter height of prism:"))
             l_sur_ar=float(5*base*(apothem+height))
             print("PENTAGONAL PRISM LATERAL SURFACE AREA result=",l_sur_ar,"sq.units")
             
         elif ch=="e":
-            side=eval(input("Enter base edge length:"))
-            height=eval(input("Enter height of prism:"))
+            side=float(input("Enter base edge length:"))
+            height=float(input("Enter height of prism:"))
             l_sur_ar=float(6*side*height)
             print("HEXAGONAL PRISM LATERAL SURFACE AREA result=",l_sur_ar,"sq.units")
                 
@@ -673,41 +631,41 @@ def total_surface_area():
     ch=int(input("Enter choice[1,2,..,8]:"))
     
     if ch==1:
-        side=eval(input("Enter side length of cube:"))
+        side=float(input("Enter side length of cube:"))
         t_sur_ar=float(6*side*side)
         print("CUBE TOTAL SURFACE AREA result=",t_sur_ar,"sq.units")
         
     elif ch==2:
-        length=eval(input("Enter length of cuboid:"))
-        width=eval(input("Enter width of cuboid:"))
-        height=eval(input("Enter height of cuboid:"))
-        t_sur_ar=float(2*{(length*width)+(width*height)+(length*height)})
+        length=float(input("Enter length of cuboid:"))
+        width=float(input("Enter width of cuboid:"))
+        height=float(input("Enter height of cuboid:"))
+        t_sur_ar = 2 * (length*width + width*height + length*height)
         print("CUBOID TOTAL SURFACE AREA result=",t_sur_ar,"sq.units")
         
     elif ch==3:
-        diameter=eval(input("Enter diameter length:"))
+        diameter=float(input("Enter diameter length:"))
         radius=float(diameter/2)
-        slant_height=eval(input("Enter slant height length:"))
+        slant_height=float(input("Enter slant height length:"))
         t_sur_ar=float(3.14*radius*(slant_height+radius))
         print("CONE TOTAL SURFACE AREA result=",t_sur_ar,"sq.units")
         
     elif ch==4:
-        diameter=eval(input("Enter diameter length:"))
+        diameter=float(input("Enter diameter length:"))
         radius=float(diameter/2)
-        height=eval(input("Enter height length:"))
+        height=float(input("Enter height length:"))
         t_sur_ar=float(2*3.14*radius*(height+radius))
         print("CYLINDER TOTAL SURFACE AREA result=",t_sur_ar,"sq.units")
         
     elif ch==5:
-        diameter=eval(input("Enter diameter length:"))
+        diameter=float(input("Enter diameter length:"))
         radius=float(diameter/2)
         t_sur_ar=float(4*3.14*radius*radius)
         print("SPHERE TOTAL SURFACE AREA result=",t_sur_ar,"sq.units")
         
     elif ch==6:
-        diameter=eval(input("Enter diameter length:"))
+        diameter=float(input("Enter diameter length:"))
         radius=float(diameter/2)
-        t_sur_ar=float([3.14*radius*radius*radius]*2/3)
+        t_sur_ar=float((3.14*radius*radius*radius)*2/3)
         print("HEMISPHERE TOTAL SURFACE AREA result=",t_sur_ar,"sq.units")
         
     elif ch==7:
@@ -716,37 +674,38 @@ def total_surface_area():
         ch=input("Enter choice[a,b,c,d,e]:")
         
         if ch=="a":
-            side=eval(input("Enter side length:"))
-            slant_height=eval(input("Enter slant_height length:"))
+            side=float(input("Enter side length:"))
+            slant_height=float(input("Enter slant_height length:"))
             t_sur_ar=float((side*side)+(2*side*slant_height))
             print("SQUARE PYRAMID TOTAL SURFACE AREA result=",t_sur_ar,"sq.units")
             
         elif ch=="b":
-            length=eval(input("Enter length of base:"))
-            width=eval(input("Enter width of base:"))
-            height=eval(input("Enter height of pyramid:"))
-            t_sur_ar=float((length+width)*(math.sqrt([height*height]+[(length/2)*(length/2)]))+(length*width))
+            length=float(input("Enter length of base:"))
+            width=float(input("Enter width of base:"))
+            height=float(input("Enter height of pyramid:"))
+            t_sur_ar = (length + width) * math.sqrt(height**2 + (length/2)**2) + length * width
             print("RECTANGULAR PYRAMID TOTAL SURFACE AREA result=",t_sur_ar,"sq.units")
             
         elif ch=="c":
-            side=eval(input("Enter side of triangular base length:"))
-            height=eval(input("Enter height of triangular base length:"))
-            slant_height=eval(input("Enter slant_height of pyramid:"))
-            t_sur_ar=float({(1/2)*(side*height)}+(3/2)*(side*slant_height))
+            side=float(input("Enter side of triangular base length:"))
+            height=float(input("Enter height of triangular base length:"))
+            slant_height=float(input("Enter slant_height of pyramid:"))
+            t_sur_ar = side * (0.5 * height + 1.5 * slant_height)
             print("TRIANGULAR PYRAMID TOTAL SURFACE AREA result=",t_sur_ar,"sq.units")
             
         elif ch=="d":
-            side=eval(input("Enter side length of base:"))
-            apothem=eval(input("Enter apothem length of base:"))
-            height=eval(input("Enter height of pyramid:"))
-            t_sur_ar=float((5/2)*side*{apothem+[math.sqrt([side*side]/4)]+(height*height)})
+            side=float(input("Enter side length of base:"))
+            apothem=float(input("Enter apothem length of base:"))
+            height=float(input("Enter height of pyramid:"))
+            slant_height = math.sqrt(height**2 + (side/2)**2)
+            t_sur_ar = 2.5 * side * (apothem + slant_height)
             print("PENTAGONAL PYRAMID TOTAL SURFACE AREA result=",t_sur_ar,"sq.units")
             
         elif ch=="e":
-            side=eval(input("Enter side length:"))
-            apothem=eval(input("Enter apothem length:"))
-            slant_height=eval(input("Enter slant height of pyramid:"))
-            t_sur_ar=float({3*(side*apothem)}+{3*(side*slant_height)})
+            side=float(input("Enter side length:"))
+            apothem=float(input("Enter apothem length:"))
+            slant_height=float(input("Enter slant height of pyramid:"))
+            t_sur_ar = 3 * side * (apothem + slant_height)
             print("HEXAGONAL PYRAMID TOTAL SURFACE AREA result=",t_sur_ar,"sq.units")
                         
         else:
@@ -758,41 +717,41 @@ def total_surface_area():
         ch=input("Enter choice[a,b,c,d,e]:")
         
         if ch=="a":
-            side=eval(input("Enter side length:"))
-            height=eval(input("Enter height of prism:"))
+            side=float(input("Enter side length:"))
+            height=float(input("Enter height of prism:"))
             t_sur_ar=float((2*side*side)+(4*side*height))
             print("SQUARE PRISM TOTAL SURFACE AREA result=",t_sur_ar,"sq.units")
             
         elif ch=="b":
-            length=eval(input("Enter length of rectangle:"))
-            width=eval(input("Enter width of rectangle:"))
-            height=eval(input("Enter height of prism:"))
-            t_sur_ar=float(2*{(length*width)+(width*height)+(length*height)})
+            length=float(input("Enter length of rectangle:"))
+            width=float(input("Enter width of rectangle:"))
+            height=float(input("Enter height of prism:"))
+            t_sur_ar = 2 * (length*width + width*height + length*height)
             print("RECTANGULAR PRISM TOTAL SURFACE AREA result=",t_sur_ar,"sq.units")
             
         elif ch=="c":
-            a=eval(input("Enter side1 length:"))
-            b=eval(input("Enter side2 length:"))
-            c=eval(input("Enter side3 length:"))
+            a=float(input("Enter side1 length:"))
+            b=float(input("Enter side2 length:"))
+            c=float(input("Enter side3 length:"))
             peri=float(a+b+c)
-            base=eval(input("Enter base length:"))
-            ht=eval(input("Enter height length:"))
-            base_ar=float([base*ht]*1/2)
-            height=eval(input("Enter height of prism:"))
+            base=float(input("Enter base length:"))
+            ht=float(input("Enter height length:"))
+            base_ar=float((base*ht)/2)
+            height=float(input("Enter height of prism:"))
             t_sur_ar=float((2*base_ar)+(peri*height))
             print("TRIANGULAR PRISM TOTAL SURFACE AREA result=",t_sur_ar,"sq.units")
             
         elif ch=="d":
-            apothem=eval(input("Enter apothem length:"))
-            base=eval(input("Enter base length:"))
-            height=eval(input("Enter height of prism:"))
+            apothem=float(input("Enter apothem length:"))
+            base=float(input("Enter base length:"))
+            height=float(input("Enter height of prism:"))
             t_sur_ar=float(5*base*(apothem+height))
             print("PENTAGONAL PRISM TOTAL SURFACE AREA result=",t_sur_ar,"sq.units")
             
         elif ch=="e":
-            side=eval(input("Enter base edge length:"))
-            apothem=eval(input("Enter apothem length:"))
-            height=eval(input("Enter height of prism:"))
+            side=float(input("Enter base edge length:"))
+            apothem=float(input("Enter apothem length:"))
+            height=float(input("Enter height of prism:"))
             t_sur_ar=float(6*side*(apothem+height))
             print("HEXAGONAL PRISM TOTAL SURFACE AREA result=",t_sur_ar,"sq.units")
                 
@@ -813,32 +772,32 @@ def temp_converter():
     ch=input("Enter choice[a,b,c,d,e,f]:")
         
     if ch=="a":
-        cel=eval(input("Enter celsius temprature:"))
+        cel=float(input("Enter celsius temprature:"))
         kelvin=float(cel+273.15)
         print("CELSIUS TO KELVIN result=",kelvin)
             
     elif ch=="b":
-        kel=eval(input("Enter kelvin temprature:"))
+        kel=float(input("Enter kelvin temprature:"))
         celsius=float(kel-273.15)
         print("KELVIN TO CELSIUS result=",celsius)
             
     elif ch=="c":
-        fahr=eval(input("Enter fahrenheit temprature:"))
+        fahr=float(input("Enter fahrenheit temprature:"))
         celsius=float((fahr-32)*(5/9))
         print("FAHRENHEIT TO CELSIUS result=",celsius)
         
     elif ch=="d":
-        cel=eval(input("Enter celsius temprature:"))
+        cel=float(input("Enter celsius temprature:"))
         fahrenheit=float(cel*(9/5)+32)
         print("CELSIUS TO FAHRENHEIT result=",fahrenheit)
             
     elif ch=="e":
-        fahr=eval(input("Enter fahrenheit temprature:"))
+        fahr=float(input("Enter fahrenheit temprature:"))
         kelvin=float((fahr-32)*(5/9)+273.15)
         print("FAHRENHEIT TO KELVIN result=",kelvin)
             
     elif ch=="f":
-        kel=eval(input("Enter kelvin temprature:"))
+        kel=float(input("Enter kelvin temprature:"))
         fahrenheit=float((kel-273.15)*(9/5)+32)
         print("KELVIN TO FAHRENHEIT result=",fahrenheit)
             
@@ -932,7 +891,7 @@ def bmi():
     print("FOR CALCULATING YOUR BMI SOME DATAS ARE REQUIRED. SO PROCEEDING TO COLLECT DATAS................")
     weight= float(input("Enter your weight in kg :"))
     height= float(input("Enter your height in m/cm :"))
-    bmi= float(weight/[height*height])
+    bmi= float(weight/(height*height))
     print("Your BMI is :",bmi)
 
 
@@ -978,91 +937,126 @@ def roots():
 
 # HERE WHATEVER FUNCTIONS I HAVE CREATED IN THE ABOVE PART OF THE PROGRAM, JUST DECLARED ALL THOSE FOR EXECUTION.
 
-print("####----CALCULATION----OPERATIONS----####")
-print("WELCOME TO THE WORLD OF CALCULATION WHERE IT MAKES YOUR LIFE EASIER.")
-while True:
-    print("CHOOSE ONE OF THESE WHICH YOU WANT TO DO!")
-    print("1.ADDITION\n2.SUBTRACTION\n3.MULTIPLICATION\n4.DIVISION\n5.AVERAGE\n6.PERCENTAGE\n7.FACTORIAL")
-    print("8.AREA\n9.PERIMETER\n10.VOLUME\n11.LATERAL SURFACE AREA\n12.TOTAL SURFACE AREA\n13.TEMPRATURE CONVERTER")
-    print("14.TABLE GENERATOR\n15.DEGREE TO RADIAN\n16.RADIAN TO DEGREE\n17.THETA VALUE OPERATION\n18.MINOR OPERATIONS\n19.BMI CALCULATION")
-
-    ch=int(input("Enter choice[1,2,3,......,21]:"))
-    if ch==1:
-        add()
-        print("CALCULATION SUCCESSFUL. THANK YOU......................")
-    elif ch==2:
-        subtract()
-        print("CALCULATION SUCCESSFUL. THANK YOU......................")
-    elif ch==3:
-        multiply()
-        print("CALCULATION SUCCESSFUL. THANK YOU......................")
-    elif ch==4:
-        divide()
-        print("CALCULATION SUCCESSFUL. THANK YOU......................")
-    elif ch==5:
-        average()
-        print("CALCULATION SUCCESSFUL. THANK YOU......................")
-    elif ch==6:
-        percentage()
-        print("CALCULATION SUCCESSFUL. THANK YOU......................")
-    elif ch==7:
-        factorial()
-        print("CALCULATION SUCCESSFUL. THANK YOU......................")
-    elif ch==8:
-        area()
-        print("CALCULATION SUCCESSFUL. THANK YOU......................")
-    elif ch==9:
-        perimeter()
-        print("CALCULATION SUCCESSFUL. THANK YOU......................")
-    elif ch==10:
-        volume()
-        print("CALCULATION SUCCESSFUL. THANK YOU......................")
-    elif ch==11:
-        lateral_surface_area()
-        print("CALCULATION SUCCESSFUL. THANK YOU......................")
-    elif ch==12:
-        total_surface_area()
-        print("CALCULATION SUCCESSFUL. THANK YOU......................")
-    elif ch==13:
-        temp_converter()
-        print("CALCULATION SUCCESSFUL. THANK YOU......................")
-    elif ch==14:
-        table_generator()
-        print("CALCULATION SUCCESSFUL. THANK YOU......................")
-    elif ch==15:
-        deg_rad()
-        print("CALCULATION SUCCESSFUL. THANK YOU......................")
-    elif ch==16:
-        rad_deg()
-        print("CALCULATION SUCCESSFUL. THANK YOU......................")
-    elif ch==17:
-        theta_value()
-        print("CALCULATION SUCCESSFUL. THANK YOU......................")
-    elif ch==18:
-        minor_opns()
-        print("CALCULATION SUCCESSFUL. THANK YOU......................")
-    elif ch==19:
-        bmi()
-        print("CALCULATION SUCCESSFUL. THANK YOU......................")
-    elif ch==20:
-        values()
-        print("CALCULATION SUCCESSFUL. THANK YOU......................")
-    elif ch==21:
-        roots()
-        print("CALCULATION SUCCESSFUL. THANK YOU......................")
-    else:
-        print("Your input choice is invalid.\nPlease try again.")
-        
-    print("DO YOU WANT TO CONTINUE FURTHER?\nIF THEN...........")    
-    a=input("CHOOSE[y/n/Y/N]:")
-    if a=="y" or a=="Y":
-        continue
-    else:
-        if a=="n" or a=="N":
+def main():
+    print("####----CALCULATION----OPERATIONS----####")
+    print("WELCOME TO THE WORLD OF CALCULATION WHERE IT MAKES YOUR LIFE EASIER.")
+    while True:
+        print("""
+1. Addition
+2. Subtraction
+3. Multiplication
+4. Division
+5. Average
+6. Percentage
+7. Factorial
+8. Area
+9. Perimeter
+10. Volume
+11. Lateral Surface Area
+12. Total Surface Area
+13. Temperature Converter
+14. Table Generator
+15. Degree to Radian
+16. Radian to Degree
+17. Trigonometric Values
+18. Speed/Distance/Time
+19. BMI Calculation
+20. List of constants
+21. Square root of a number
+0. Exit
+""")
+    
+        try:
+            ch = int(input("Enter choice: "))
+        except:
+            print("Invalid input! Please enter a number.")
+            continue
+            
+        if ch == 0:
+            print("Exiting... Thank you!")
             break
+            
+        elif ch==1:
+            add()
+            
+        elif ch==2:
+            subtract()
+            
+        elif ch==3:
+            multiply()
+            
+        elif ch==4:
+            divide()
+            
+        elif ch==5:
+            average()
+            
+        elif ch==6:
+            percentage()
+            
+        elif ch==7:
+            factorial()
+            
+        elif ch==8:
+            area()
+            
+        elif ch==9:
+            perimeter()
+            
+        elif ch==10:
+            volume()
+            
+        elif ch==11:
+            lateral_surface_area()
+            
+        elif ch==12:
+            total_surface_area()
+            
+        elif ch==13:
+            temp_converter()
+            
+        elif ch==14:
+            table_generator()
+            
+        elif ch==15:
+            deg_rad()
+            
+        elif ch==16:
+            rad_deg()
+            
+        elif ch==17:
+            theta_value()
+            
+        elif ch==18:
+            minor_opns()
+            
+        elif ch==19:
+            bmi()
+            
+        elif ch==20:
+            values()
+            
+        elif ch==21:
+            roots()
+            
         else:
             print("Your input choice is invalid.\nPlease try again.")
-            
+
+        print("Operation completed successfully!\n")
+        
+        print("DO YOU WANT TO CONTINUE FURTHER?\nIF THEN...........")    
+        a=input("CHOOSE[y/n/Y/N]:")
+        if a=="y" or a=="Y":
+            continue
+        else:
+            if a=="n" or a=="N":
+                break
+            else:
+                print("Your input choice is invalid.\nPlease try again.")
+
+if __name__ == "__main__":
+    main()
+
 """ SOME POINTS TO BE NOTED """
 # IF YOU HAVE CLEARLY AND PATIENCLY READ THE ENTIRE PROGRAM THEN YOU HAVE NOTICED THAT
 # I HAVE CONTINUOUSLY USED "ELSE" PART IN EVERY PART OF THE PROGRAM, I MEAN
